@@ -3,8 +3,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sqlalchemy import create_engine
 
-# 1. Connect to MySQL (Replace 'your_password_here')
-engine = create_engine('mysql+pymysql://root:Arman2005#@localhost:3306/supply_chain')
+# NEW (Secure & Portable)
+import os
+
+db_password = os.getenv('DB_PASSWORD', 'YOUR_MYSQL_PASSWORD')
+engine = create_engine(f'mysql+pymysql://root:{db_password}@localhost:3306/supply_chain')
 
 # 2. Query only our top product: P0016
 query = """
