@@ -6,8 +6,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-# 1. Connect to MySQL
-engine = create_engine('mysql+pymysql://root:Arman2005#@localhost:3306/supply_chain')
+# NEW (Secure & Portable)
+import os
+
+db_password = os.getenv('DB_PASSWORD', 'YOUR_MYSQL_PASSWORD')
+engine = create_engine(f'mysql+pymysql://root:{db_password}@localhost:3306/supply_chain')
 
 # 2. Extract Data
 query = """
