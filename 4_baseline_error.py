@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+# NEW (Secure & Portable)
+import os
 
-# 1. Connect to MySQL (Replace with your password!)
-engine = create_engine('mysql+pymysql://root:Arman2005#@localhost:3306/supply_chain')
+db_password = os.getenv('DB_PASSWORD', 'YOUR_MYSQL_PASSWORD')
+engine = create_engine(f'mysql+pymysql://root:{db_password}@localhost:3306/supply_chain')
 
 query = "SELECT date, units_sold FROM inventory_data WHERE product_id = 'P0016' ORDER BY date;"
 df = pd.read_sql(query, con=engine)
