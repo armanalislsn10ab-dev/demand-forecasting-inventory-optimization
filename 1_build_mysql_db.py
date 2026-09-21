@@ -1,9 +1,11 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-# 1. Setup the MySQL connection (Replace 'your_password_here' with your actual MySQL password)
-# Format: mysql+pymysql://username:password@host:port/database_name
-engine = create_engine('mysql+pymysql://root:Arman2005#@localhost:3306/supply_chain')
+# NEW (Safe for GitHub)
+import os
+
+db_password = os.getenv('DB_PASSWORD', 'YOUR_MYSQL_PASSWORD')
+engine = create_engine(f'mysql+pymysql://root:{db_password}@localhost:3306/supply_chain')
 
 print("Loading retail_store_inventory.csv in chunks to MySQL...")
 
