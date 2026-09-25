@@ -33,7 +33,8 @@ Static reorder points often lead to capital lockup in excess inventory or revenu
 ---
 
 ## 🖥️ Power BI Dashboard Preview
-![Baseline Forecast](baseline_forecast.png)
+![Baseline Forecast](<img width="1057" height="586" alt="Screenshot 2026-09-20 103516" src="https://github.com/user-attachments/assets/fa80d27a-baed-4cad-8d75-349fe3f5cc5e" />
+)
 
 ### Key Performance Metrics Tracked:
 * **Total Volume Sold:** 10 Million Units
